@@ -79,16 +79,3 @@ Deployment Steps
 - Deployed in Public Subnets
 - Listener: HTTP 80 → Target Group
 
----
-
-💻 User Data Script (Nginx Setup)
-
-```bash
-#!/bin/bash
-yum update -y
-yum install -y nginx
-systemctl start nginx
-systemctl enable nginx
-echo "<h1>DevOps Assignment</h1>
-<p>Hostname: $(hostname)</p>
-<p>Private IP: $(hostname -I)</p>" > /usr/share/nginx/html/index.html
